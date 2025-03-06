@@ -1,5 +1,5 @@
 class Contact{
-    Contact(firstName,lastName,address, city, state, zip, phone, email){
+    constructor(firstName,lastName,address, city, state, zip, phone, email){
          this.firstName=firstName;
          this.lastName=lastName;
          this.address=address;
