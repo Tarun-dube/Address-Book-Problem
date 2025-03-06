@@ -1,3 +1,4 @@
+
  class Contact{
     // regex patterns for validation
     constructor(firstName, lastName, address, city, state, zip, phone, email){
@@ -31,3 +32,4 @@
 
 }
 module.export=Contact;
+
