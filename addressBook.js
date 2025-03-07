@@ -19,5 +19,11 @@ class AddressBook{
         console.log(this.contacts);
     }
 
+    sortContactsByName() {
+        let sortedContacts = [...this.contacts].sort((a, b) => a.firstName.localeCompare(b.firstName));
+        console.log("\nSorted Contacts:");
+        sortedContacts.forEach(contact => console.log(contact.toString()));
+    }
+
 }
 module.exports=AddressBook;

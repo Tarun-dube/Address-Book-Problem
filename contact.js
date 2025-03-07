@@ -29,7 +29,9 @@
     this.phone = phone;
     this.email = email;
 }
-
+toString() {
+    return `Contact{Name='${this.firstName} ${this.lastName}', Address='${this.address}', City='${this.city}', State='${this.state}', Zip='${this.zip}', Phone='${this.phone}', Email='${this.email}'}`;
 }
-module.export=Contact;
+}
+module.exports=Contact;
 
