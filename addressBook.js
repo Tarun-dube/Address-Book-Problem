@@ -25,7 +25,9 @@ class AddressBook{
     }
     findContact(name){
         const [firstName,lastName]=name.split(" ");
-        return this.contacts.find(contact=>contact.firstName===firstName&&contact.lastName===lastName);
+
+        return this.contacts.find(contact=>contact.firstName===firstName||contact.lastName===lastName);
+
     }
     editContact(name,newDetails){
         let contact=this.findContact(name);
