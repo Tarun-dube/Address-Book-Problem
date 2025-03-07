@@ -12,6 +12,10 @@ try {
     myAddressBook.addContact(contact2);
     myAddressBook.addContact(contact3);
 
+
+    // 🔹 Sort contacts by name
+    myAddressBook.sortContactsByName();
+
     console.log("People in Mumbai:", myAddressBook.searchByCity("Mumbai"));
     console.log("People in Maharashtra:", myAddressBook.searchByState("Maharashtra"));
         // 🔹 Count persons by city
@@ -26,6 +30,7 @@ try {
 
       // 🔹 View persons by state
       myAddressBook.viewPersonsByState("Maharashtra");
+
 
 
 } catch (error) {
