@@ -21,6 +21,13 @@ try {
         myAddressBook.countByState("Maharashtra");
     
 
+      // 🔹 View persons by city
+      myAddressBook.viewPersonsByCity("Mumbai");
+
+      // 🔹 View persons by state
+      myAddressBook.viewPersonsByState("Maharashtra");
+
+
 } catch (error) {
     console.error(error.message);
 }
