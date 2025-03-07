@@ -18,6 +18,13 @@ class AddressBook{
     displayContacts(){
         console.log(this.contacts);
     }
+    searchByCity(city) {
+        return this.contacts.filter(contact => contact.city.toLowerCase() === city.toLowerCase());
+    }
+
+    searchByState(state) {
+        return this.contacts.filter(contact => contact.state.toLowerCase() === state.toLowerCase());
+    }
 
 }
 module.exports=AddressBook;
