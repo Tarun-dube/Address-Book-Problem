@@ -1,40 +1,73 @@
-const AddressBook = require('./addressBook');
-const Contact = require('./contact');
-
-let myAddressBook = new AddressBook();
+const Contact = require("./contact");
+const AddressBook = require("./addressBook");
 
 try {
-    let contact1 = new Contact("John", "Doe", "123 Main St", "Mumbai", "Maharashtra", "400001", "9876543210", "john.doe@example.com");
-    let contact2 = new Contact("Jane", "Doe", "456 Elm St", "Delhi", "Delhi", "110011", "8765432109", "jane.doe@example.com");
-    let contact3 = new Contact("Alice", "Smith", "789 Park Ave", "Mumbai", "Maharashtra", "400002", "7654321098", "alice.smith@example.com");
+    // Create an instance of AddressBook
+    const myAddressBook = new AddressBook();
 
+    // Create some contacts
+    const contact1 = new Contact("Amit", "Sharma", "Sector 15", "Noida", "Uttar Pradesh", "201301", "9876543210", "amit.sharma@example.com");
+    const contact2 = new Contact("Rohit", "Verma", "MG Road", "Bangalore", "Karnataka", "560001", "7890123456", "rohit.verma@example.com");
+    const contact3 = new Contact("Sita", "Patel", "Connaught Place", "Delhi", "Delhi", "110001", "9123456789", "sita.patel@example.com");
+    const contact4 = new Contact("Neha", "Gupta", "Park Street", "Kolkata", "West Bengal", "700016", "8787654321", "neha.gupta@example.com");
+
+    // Add contacts
+    console.log("\nAdding contacts...");
     myAddressBook.addContact(contact1);
     myAddressBook.addContact(contact2);
     myAddressBook.addContact(contact3);
 
+    // Display contacts
+    console.log("\nAll Contacts:");
+    myAddressBook.displayContacts();
+
+
+    // Search for a contact by city
+    console.log("\nSearching for contacts in New York:");
+    myAddressBook.viewPersonsByCity("New York");
+
+    // Search for a contact by state
+    console.log("\nSearching for contacts in California:");
+    myAddressBook.viewPersonsByState("CA");
 
 
     // 🔹 Sort contacts by name
     myAddressBook.sortContactsByName();
 
-    console.log("People in Mumbai:", myAddressBook.searchByCity("Mumbai"));
-    console.log("People in Maharashtra:", myAddressBook.searchByState("Maharashtra"));
-        // 🔹 Count persons by city
-        myAddressBook.countByCity("Mumbai");
+    // Count contacts by city
+    console.log("\nCount of contacts in Chicago:");
+    myAddressBook.countByCity("Chicago");
 
-        // 🔹 Count persons by state
-        myAddressBook.countByState("Maharashtra");
-    
+    // Count contacts by state
+    console.log("\nCount of contacts in New York:");
+    myAddressBook.countByState("NY");
 
-      // 🔹 View persons by city
-      myAddressBook.viewPersonsByCity("Mumbai");
+    // Edit a contact
+    console.log("\nEditing John Doe's phone number...");
+    myAddressBook.editContact("John Doe", { phoneNumber: "111-222-3333" });
 
-      // 🔹 View persons by state
-      myAddressBook.viewPersonsByState("Maharashtra");
+    // Delete a contact
+    console.log("\nDeleting Jane Smith...");
+    myAddressBook.deleteContact("Jane Smith");
 
+    // Display updated contacts
+    console.log("\nUpdated Contacts:");
+    myAddressBook.displayContacts();
 
+    // Sorting contacts
+    console.log("\nSorting Contacts by Name:");
+    myAddressBook.sortContactsByName();
+
+    console.log("\nSorting Contacts by City:");
+    myAddressBook.sortContactsByCity();
+
+    console.log("\nSorting Contacts by State:");
+    myAddressBook.sortContactsByState();
+
+    console.log("\nSorting Contacts by Zip:");
+    myAddressBook.sortContactsByZip();
 
 
 } catch (error) {
-    console.error(error.message);
+    console.error("\nAn error occurred:", error.message);
 }
