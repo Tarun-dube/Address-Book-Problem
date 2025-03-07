@@ -18,6 +18,10 @@ class AddressBook{
     displayContacts(){
         console.log(this.contacts);
     }
+
+    getContactCount(){
+        this.contacts.reduce(count=>count+1,0);
+    }
     findContact(name){
         const [firstName,lastName]=name.split(" ");
         return this.contacts.find(contact=>contact.firstName===firstName&&contact.lastName===lastName);
@@ -44,7 +48,6 @@ class AddressBook{
       else {
         console.log("Contact not found");
       }
-
 
     }
 
