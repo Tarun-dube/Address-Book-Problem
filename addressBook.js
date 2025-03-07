@@ -18,6 +18,9 @@ class AddressBook{
     displayContacts(){
         console.log(this.contacts);
     }
+    getContactCount(){
+        this.contacts.reduce(count=>count+1,0);
+    }
 
 }
 module.exports=AddressBook;
