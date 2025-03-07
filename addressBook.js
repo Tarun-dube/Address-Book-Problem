@@ -18,6 +18,19 @@ class AddressBook{
     displayContacts(){
         console.log(this.contacts);
     }
+    findContact(name){
+        return this.contacts.find(contact=>contact.firstName===name||contact.lastName===name);
+    }
+    editContact(name,newDetails){
+        let contact=this.findContact(name);
+        if(contact){
+            Object.assign(contact,newDetails);
+            console.log("Contact updated successfully");
+        }
+        else {
+            console.log("Contact not found!");
+        }
+    }
 
 }
 module.exports=AddressBook;
