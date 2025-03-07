@@ -14,11 +14,19 @@ try {
 
     console.log("People in Mumbai:", myAddressBook.searchByCity("Mumbai"));
     console.log("People in Maharashtra:", myAddressBook.searchByState("Maharashtra"));
+        // 🔹 Count persons by city
+        myAddressBook.countByCity("Mumbai");
+
+        // 🔹 Count persons by state
+        myAddressBook.countByState("Maharashtra");
+    
+
       // 🔹 View persons by city
       myAddressBook.viewPersonsByCity("Mumbai");
 
       // 🔹 View persons by state
       myAddressBook.viewPersonsByState("Maharashtra");
+
 
 } catch (error) {
     console.error(error.message);
