@@ -19,7 +19,8 @@ class AddressBook{
         console.log(this.contacts);
     }
     findContact(name){
-        return this.contacts.find(contact=>contact.firstName===name||contact.lastName===name);
+        const [firstName,lastName]=name.split(" ");
+        return this.contacts.find(contact=>contact.firstName===firstName||contact.lastName===lastName);
     }
     editContact(name,newDetails){
         let contact=this.findContact(name);
