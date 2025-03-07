@@ -6,12 +6,13 @@ class AddressBook{
     }
 
     addContact(contact){
-        if(contact instanceof Contact){
-            this.contacts.push(contact);
+        let exists=this.contacts.sonme(c=> c.firstName===contact.firstName&&c.lastName===contact.lastName);
+        if(exists){
+            console.log("Duplicate entry! contact not added");
         }
         else {
-            throw new Error("Invalid object cantact");
-            
+            this.contacts.push(contact);
+            console.log("Contact added successfully");            
         }
 
     }
