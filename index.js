@@ -21,6 +21,7 @@ try {
     console.log("\nAll Contacts:");
     myAddressBook.displayContacts();
 
+
     // Search for a contact by city
     console.log("\nSearching for contacts in New York:");
     myAddressBook.viewPersonsByCity("New York");
@@ -28,6 +29,10 @@ try {
     // Search for a contact by state
     console.log("\nSearching for contacts in California:");
     myAddressBook.viewPersonsByState("CA");
+
+
+    // 🔹 Sort contacts by name
+    myAddressBook.sortContactsByName();
 
     // Count contacts by city
     console.log("\nCount of contacts in Chicago:");
@@ -61,6 +66,7 @@ try {
 
     console.log("\nSorting Contacts by Zip:");
     myAddressBook.sortContactsByZip();
+
 
 } catch (error) {
     console.error("\nAn error occurred:", error.message);
